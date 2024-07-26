@@ -1,0 +1,751 @@
+html, body {
+    height: 100%; /* Ensure html and body take full viewport height */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(pics/Desktop\ -\ 1\ \(16\).png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Montserrat", sans-serif;
+    overflow-y: auto;
+}
+.menu{
+    display: flex;
+    justify-content: flex-end;
+}
+.menuicon{
+    height: 55px;
+    padding: 20px;
+    opacity: 0.9;
+    transition: 0.3s ease;
+}
+.menuicon:hover{
+    -webkit-filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9)); /* Increased opacity */
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9));
+}
+.dropdown-container{
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    margin-right: 90px;
+    margin-top: 0px;
+    height: 290px;
+    width: 230px;
+    display: flex;
+    border-radius: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.6px);
+    -webkit-backdrop-filter: blur(5.6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    opacity: 0; /* Hidden by default */
+    transform: translateY(-20px); /* Start position offscreen */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.landing-page{
+    z-index: 1;
+    position: relative;
+}
+.dropdown-menu li a{
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s ease;
+    border-bottom: 0.2px solid lightgray;
+}
+.dropdown-menu li a:hover{
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6);
+}
+.dropdown-menu{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 15%;
+    gap: 45px;
+}
+.dropdown-container.show {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0);
+}
+.landing-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.landing-title{
+    font-size: 3.5rem;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+.landing-description{
+    font-size: 1rem;
+    color: lightgray;
+    width: 80%;
+    text-align: center;
+}
+.landing-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 4%;
+}
+.btn1, .btn2{
+    padding: 12px 16px;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    color: whitesmoke;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.19);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: 0.3s ease;
+}
+.btn1:hover, .btn2:hover {
+    background: rgba(255, 255, 255, 0.4); /* Lighter background on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* Brighter border on hover */
+}
+.logo{
+    height: 165px;
+    opacity: 0.9;
+}
+.logos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    gap: 50px;
+}
+.services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+}
+
+.service-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-auto-rows: minmax(100px, auto);  /* Auto height for rows with a minimum height */
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 5%;
+}
+
+.service{
+    color: #fff;
+    background: transparent;
+    padding: 20px;
+    height: 150px;
+    width: 200px;
+    border-radius: 2.1rem 0.5rem 2.1rem;
+    transition: 0.4s ease;
+    box-shadow: 
+    rgba(255, 255, 255, 0.3) 0px 10px 20px -6px inset,
+    rgba(255, 255, 255, 0.363) 0px 6px 12px -8px inset;
+}
+.service-title{
+    font-weight: 600;
+}
+.serviceinfo{
+    color: lightgray;
+}
+.servicepage h2{
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.about{
+    display: flex;
+    width: 100%;
+    margin-top: 12%;
+}
+.info, .bento-grid {
+    flex: 1;
+    padding: 20px; /* Optional: for spacing */
+    box-sizing: border-box;
+}
+.info{
+    margin-top: 7%;
+    margin-left: 5%;
+}
+.infotitle{
+    font-size: 1.9rem;
+    color: #fff;
+    font-weight: 500;
+}
+.aboutspan{
+    font-size: 1rem;
+    color: lightgray;
+}
+.aboutbtn1, .aboutbtn2{
+    padding: 10px 14px;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    margin-top: 4%;
+    border: none;
+    cursor: pointer;
+    color: whitesmoke;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.19);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: 0.3s ease;
+}
+.aboutbtn1:hover{
+    background: rgba(255, 255, 255, 0.4); /* Lighter background on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+    border: 1px solid rgba(255, 255, 255, 0.6); 
+}
+.aboutbtn2:hover{
+    background: rgba(255, 255, 255, 0.4); /* Lighter background on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+    border: 1px solid rgba(255, 255, 255, 0.6); 
+}
+
+.bento-grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: -4%px;
+}
+.gridleft{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.gridright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.gridleft .item{
+    height: 130px;
+    width: 270px;
+    border-radius: 1rem;
+}
+.gridright .item{
+    height: 206px;
+    width: 150px;
+    border-radius: 1rem;
+}
+
+.item{
+    margin: 8px;
+    transition:  0.3s ease;
+}
+.item:hover{
+    transform: scale(1.02);
+}
+#item1{
+    background-image: url(pics/abstract-luxury-blur-dark-grey-black-gradient-used-as-background-studio-wall-display-your-pr.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #fff;
+}
+#item1 p{
+    font-size: 1rem;
+}
+.globe{
+    height: 40px;
+}
+#item2{
+    background-image: url(pics/abstract-luxury-blur-dark-grey-black-gradient-used-as-background-studio-wall-display-your-pr.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+#item2 h5{
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+}
+#item2 p{
+    color: lightgray;
+    font-size: 0.9rem;
+    margin-top: -2%;
+    width: 80%;
+}
+#item3{
+    background-image: url(pics/abstract-luxury-blur-dark-grey-black-gradient-used-as-background-studio-wall-display-your-pr.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+#item3 h5{
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+}
+#item3 p{
+    color: lightgray;
+    font-size: 0.9rem;
+    margin-top: -2%;
+    width: 80%;
+}
+#item4{
+    background-image: url(pics/BD46C47E-7295-4123-BABC-C11AD586CA62.jpg);
+    background-position: center;
+    background-size: cover;
+}
+#item5{
+    background-image: url(pics/6AD18F53-8330-4F03-8949-B25F18DA52F0.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.projects{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.project-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: 9%;
+}
+.project-title h2{
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #fff;
+}
+.project-title span{
+    font-size: 1.1rem;
+    color: lightgray;
+}
+.project-wrapper{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+
+}
+.projectimg{
+    height: 350px;
+    border-radius: 1.5rem;
+    display: block;
+}
+.projectimg-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    background: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.7px);
+    -webkit-backdrop-filter: blur(2.7px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1.5rem;
+}
+.projectinfo h4{
+    font-size: 1.3rem;
+    color: #fff;
+}
+.projectinfo span{
+    font-size: 1rem;
+    color: lightgray;
+}
+
+.pricings{
+    margin-top: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.pricing-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 40px;
+}
+.check{
+    height: 25px;
+    margin-right: 8%;
+}
+.pricing{
+    color: #fff;
+    background: transparent;
+    padding: 20px;
+    height: 350px;
+    width: 250px;
+    border-radius: 2.1rem 0.5rem 2.1rem;
+    transition: 0.4s ease;
+    box-shadow: 
+    rgba(255, 255, 255, 0.3) 0px 10px 20px -6px inset,
+    rgba(255, 255, 255, 0.363) 0px 6px 12px -8px inset;
+
+
+}
+.pricingtitle{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.price{
+    text-align: center;
+    margin-top: 14%;
+    font-size: 1.5rem;
+}
+.pricespan{
+    font-size: 1rem;
+}
+.pricingbutton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pricingbtn{
+    padding: 12px 16px;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    color: whitesmoke;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.19);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: 0.3s ease;
+    margin-top: 5%;
+}
+.pricingbtn:hover{
+    background: rgba(255, 255, 255, 0.4); /* Lighter background on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* Brighter border on hover */
+}
+.pricingheader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 85%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5%;
+    margin-bottom: 4%;
+    color: #fff;
+}
+.pricingheader h2{
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+.pricinginfo{
+    color: lightgray;
+}
+.pricingheader span{
+    color: lightgray;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 1px;
+    margin-bottom: 1%;
+}
+.footerp{
+    display: flex;
+}
+.socials img{
+    height: 37px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.footerp{
+    font-size: 1rem;
+    display: flex;
+    gap: 25px;
+    color: lightgray;
+}
+.line {
+    height: 1.2px; /* Adjust the height of the line */
+    background-image: linear-gradient(to right, #8e8e8e,rgb(189, 217, 219),#141414); /* Gradient colors */
+    opacity: 0.7;
+    overflow: hidden;
+    margin-top: 14%;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:768px){
+    .dropdown-container{
+        margin-right: 75px;
+    }
+    .menuicon:hover{
+        -webkit-filter: none;
+        filter: none;
+    }
+    .menuicon{
+        height: 45px;
+    }
+    body{
+        background-image: url(pics/Desktop\ -\ 1\ \(25\).png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .landing-title{
+        font-size: 2rem;
+        margin-top: 25%;
+        text-align: center;
+    }
+    .landing-description{
+        font-size: 0.9rem;
+        color: lightgray;
+        width: 93%;
+        text-align: center;
+        margin-top: 5%;
+    }
+    .landing-buttons{
+        margin-top: 10%;
+    }
+    .logo{
+        height: 65px;
+        opacity: 0.9;
+    }
+    .logos{
+        margin-top: 20%;
+        gap: 20px;
+    }
+
+    .service-wrapper {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* 4 columns */
+        grid-auto-rows: minmax(100px, auto);  /* Auto height for rows with a minimum height */
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin-top: 5%;
+    }
+    .servicepage h2{
+        font-size: 1.3rem;
+        margin-top: 10%;
+        font-weight: 500;
+    }
+    #hide{
+        display: none;
+    }
+
+    .project-wrapper{
+        grid-template-columns: repeat(1, 1fr); /* Creates 2 equal columns */
+        grid-template-rows: repeat(1, 1fr);    /* Creates 2 equal rows */
+        justify-items: center;
+        align-items: center; /* Centers items vertically within each cell */
+        text-align: center;
+    }
+    .projectimg{
+        height: auto;
+        border-radius: 1rem;
+        padding: 7px; /* Adjust padding as needed */
+    }
+    .project-title h2{
+        font-size: 1.3rem;
+        color: #fff;
+    }
+    .project-title{
+        margin-bottom: 15%;
+        margin-top: 8%;
+    }
+    .project-title span{
+        font-size: 0.9rem;
+    }
+    .projectinfo h4{
+        font-size: 1.1rem;
+        color: #fff;
+    }
+    .projectinfo span{
+        font-size: 0.9rem;
+        color: lightgray;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .projects{
+        overflow: hidden;
+    }
+    .project {
+        max-width: 100%;
+    }
+    .projectimg {
+        height: auto; /* Make the height of images auto to adapt to content */
+        max-width: 100%;
+    }
+
+    .about{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 12%;
+    }
+    .gridleft .item{
+        height: 110px;
+        width: 240px;
+        border-radius: 1rem;
+    }
+    .gridright .item{
+        height: 174px;
+        width: 120px;
+        border-radius: 1rem;
+    }
+    #item2 h5{
+        font-size: 0.9rem;
+    }
+    #item2 p{
+        font-size: 0.7rem;
+        margin-top: -2%;
+    }
+    #item3 h5{
+        font-size: 0.9rem;
+    }
+    #item3 p{
+        font-size: 0.7rem;
+        margin-top: -2%;
+    }
+    .infotitle{
+        font-size: 1.3rem;
+        text-align: center;
+        margin-top: 10%;
+    }
+    .aboutspan{
+        font-size: 1rem;
+        margin-bottom: 5%;
+    }
+    .about-buttons{
+        text-align: center;
+    }
+    .info{
+        text-align: center;
+    }
+
+    .project-wrapper{
+        display: grid;
+        grid-template-rows: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+    
+    }
+    .projectimg{
+        height: 230px;
+    }
+    .projectimg-container{
+        width: 316px;
+        padding: 3px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .projectinfo h4{
+        font-size: 0.9rem;
+        color: #fff;
+    }
+    .projectinfo span{
+        font-size: 0.8rem;
+        color: lightgray;
+    }
+    .projectinfo{
+        text-align: center;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .pricing-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 40px;
+    }
+    .pricingtitle{
+        font-size: 1.2rem;
+    }
+    .pricingheader{
+        margin-top: 10%;
+        margin-bottom: 8%;
+    }
+    footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .footerp{
+        font-size: 0.8rem;
+        display: flex;
+        gap: 15px;
+        color: lightgray;
+    }
+    .socials{
+        display: flex;
+        flex-direction: row;
+    }
+    .socials img{
+        height: 27px;
+    }
+    .line {
+        margin-top: 30%;
+    }
+
+}
